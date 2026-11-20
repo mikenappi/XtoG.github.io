@@ -11,7 +11,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 
 def check(browser, origin, width, height):
-    browser.set_window_size(width, height)
+    browser.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", {
+        "width": width, "height": height, "deviceScaleFactor": 1, "mobile": width < 600,
+    })
     browser.get(origin)
     browser.find_element(By.LINK_TEXT, "Chapters").click()
     assert browser.current_url.endswith("#chapters")
@@ -23,9 +25,12 @@ def check(browser, origin, width, height):
     if width < 600:
         menu = browser.find_element(By.CSS_SELECTOR, "starlight-menu-button button")
         menu.click()
-        WebDriverWait(browser, 5).until(lambda _: menu.get_attribute("aria-expanded") == "true")
-        menu.click()
-    browser.find_element(By.CSS_SELECTOR, 'main a[href*="argument/contingency"]').click()
+        chapter_link = WebDriverWait(browser, 5).until(lambda driver: next(
+            (link for link in driver.find_elements(By.CSS_SELECTOR, 'nav a[href$="/argument/contingency/"]')
+             if link.is_displayed()), False))
+        chapter_link.click()
+    else:
+        browser.find_element(By.CSS_SELECTOR, 'main a[href*="argument/contingency"]').click()
     browser.find_element(By.PARTIAL_LINK_TEXT, "brute-fact objection").click()
     assert browser.current_url.endswith("/examination/objections/#brute-existence")
     assert browser.execute_script("return document.documentElement.scrollWidth <= innerWidth")
