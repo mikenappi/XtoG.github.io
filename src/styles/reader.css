@@ -1,0 +1,32 @@
+@import './space.css';
+
+:root, :root[data-theme='light'] {
+  color-scheme: dark;
+  --sl-color-white: #f5f5f5;
+  --sl-color-gray-1: #e6e6e8;
+  --sl-color-gray-2: #ceced0;
+  --sl-color-gray-3: #aaaab0;
+  --sl-color-gray-4: #797980;
+  --sl-color-gray-5: #434348;
+  --sl-color-gray-6: #252528;
+  --sl-color-black: #0c0c0e;
+  --sl-color-bg: #0c0c0e;
+  --sl-color-bg-nav: #101012;
+  --sl-color-bg-sidebar: #101012;
+  --sl-color-text: #dedee0;
+  --sl-color-text-accent: #f6f6f7;
+  --sl-color-accent-low: #303034;
+  --sl-color-accent: #aaaab0;
+  --sl-color-accent-high: #eeeef0;
+  --sl-content-width: 44rem;
+}
+.site-title, main h1, .sl-markdown-content :is(h2,h3) {
+  font-family: Georgia,'Times New Roman',serif;
+  font-weight: 400;
+  letter-spacing: -.035em;
+}
+.sl-markdown-content { line-height: 1.8; }
+
+.expansion .content-panel { padding-inline:0; }
+.expansion .sl-markdown-content { font-weight:500; }
+.expansion :is(h1,h2,h3) { -webkit-text-stroke:.012em currentColor; }
