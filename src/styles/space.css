@@ -6,7 +6,7 @@
     radial-gradient(.8px .8px at 67px 117px,#57575c 80%,transparent),
     radial-gradient(1px 1px at 152px 83px,#414146 80%,transparent);
 }
-.argument-page, body:has(.page) {
+.argument-page, body:has(.expansion) {
   background-color: #0c0c0e;
   background-image: var(--star-field);
   background-size: 293px 347px, 269px 213px, 411px 311px;
@@ -17,5 +17,8 @@
     animation-duration: 320ms;
     animation-timing-function: cubic-bezier(.22,.68,.18,1);
   }
-  ::view-transition-group(root) { animation-duration: 160ms; }
+  ::view-transition { background: #0c0c0e; }
+  ::view-transition-old(root) { display:none; }
+  ::view-transition-new(root) { animation: reveal-page 320ms step-end both; }
+  @keyframes reveal-page { from { opacity:0; } 85%, to { opacity:1; } }
 }

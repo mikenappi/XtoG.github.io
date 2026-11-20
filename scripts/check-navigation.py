@@ -27,13 +27,15 @@ def check(browser, origin, width, height):
         WebDriverWait(browser, 5).until(lambda b: b.current_url == origin + route)
         assert browser.find_element(By.TAG_NAME, "h1").text == title
         assert browser.execute_script("return document.documentElement.scrollWidth <= innerWidth")
+        assert not browser.find_elements(By.CSS_SELECTOR, 'nav.sidebar, starlight-menu-button, .right-sidebar')
         if route.startswith("objections/"):
             browser.save_screenshot(f"screenshots/objection-{width}.png")
-            browser.find_element(By.LINK_TEXT, "Return to the argument").click()
-            assert browser.current_url == origin + "#dependence"
-        else:
-            browser.back()
+        browser.find_element(By.LINK_TEXT, "Close").click()
         WebDriverWait(browser, 5).until(lambda b: b.find_element(By.TAG_NAME, "h1").text == "The contingency argument")
+        WebDriverWait(browser, 5).until(lambda b: b.switch_to.active_element.text == label)
+    browser.get(origin + "objections/brute-existence/")
+    browser.find_element(By.LINK_TEXT, "Close").click()
+    WebDriverWait(browser, 5).until(lambda b: b.current_url == origin)
 
 
 Path("screenshots").mkdir(exist_ok=True)

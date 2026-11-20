@@ -1,0 +1,19 @@
+---
+const argumentUrl = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
+---
+<div class="expansion">
+  <div class="expansion-tools">
+    <a class="close-expansion" data-close href={argumentUrl}>Close</a>
+  </div>
+  <slot />
+</div>
+<style>
+  .expansion { max-width:46rem; margin-inline:auto; padding:clamp(1rem,3vw,2rem) 1.45rem 4rem; }
+  .expansion-tools { display:flex; justify-content:flex-end; }
+  .close-expansion {
+    display:inline-flex; align-items:center; min-height:2.75rem; padding-inline:.85rem;
+    color:#e8e8ea; font:550 .9rem/1.2 system-ui,sans-serif; text-decoration:none;
+    border-radius:2rem; border:1px solid #59595e;
+  }
+  .close-expansion:hover,.close-expansion:focus-visible { border-color:#e8e8ea; }
+</style>

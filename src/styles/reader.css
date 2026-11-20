@@ -26,3 +26,7 @@
   letter-spacing: -.035em;
 }
 .sl-markdown-content { line-height: 1.8; }
+
+.expansion .content-panel { padding-inline:0; }
+.expansion .sl-markdown-content { font-weight:500; }
+.expansion :is(h1,h2,h3) { -webkit-text-stroke:.012em currentColor; }

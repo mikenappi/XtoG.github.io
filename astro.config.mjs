@@ -8,12 +8,12 @@ export default defineConfig({
     title: 'X to G',
     description: 'A philosophical argument from contingency to a necessary mental foundation.',
     head: [{ tag: 'script', attrs: { src: '/XtoG.github.io/reading-transition.js' } }],
-    components: { ThemeSelect: './src/components/ThemeSelect.astro' },
+    components: {
+      PageFrame: './src/components/ExpansionFrame.astro',
+      TwoColumnContent: './src/components/ReadingColumn.astro',
+    },
+    pagination: false,
     customCss: ['./src/styles/reader.css'],
-    sidebar: [
-      { label: 'Introduction', items: ['overview', 'glossary'] },
-      { label: 'The argument', items: ['argument/contingency', 'argument/necessity', 'argument/mind', 'argument/conclusion'] },
-      { label: 'Examination & defense', items: ['examination/objections', 'examination/proof', 'examination/sources'] },
-    ],
+    sidebar: [],
   })],
 });

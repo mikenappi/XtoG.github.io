@@ -1,6 +1,6 @@
 # X to G
 
-An Astro Starlight reading site for the Contingency Argument. The introduction, four argument chapters and examination pages live in `src/content/docs/`. The homepage in `src/pages/index.astro` presents the argument directly. Each linked definition and objection has its own Markdown file under `terms/` or `objections/`. Supporting browsers carry the selected link into the destination heading using a cross-document view transition. Reduced-motion readers use ordinary navigation. Edit the reading order in `astro.config.mjs` and the article theme in `src/styles/reader.css`.
+An Astro Starlight reading site for the Contingency Argument. The introduction, four argument chapters and examination pages live in `src/content/docs/`. The homepage in `src/pages/index.astro` presents the argument directly. Each linked definition and objection has its own Markdown file under `terms/` or `objections/`. Supporting browsers carry the selected link into the destination heading using a cross-document view transition. Close returns to the opening passage. Direct visits can close to the argument homepage. Reduced-motion readers use ordinary navigation. Edit the reading order in `src/pages/index.astro` and the article theme in `src/styles/reader.css`.
 
 ## Local development
 
