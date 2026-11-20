@@ -11,6 +11,9 @@ permissions:
 
 jobs:
   build:
+    outputs:
+      home_hash: ${{ steps.digest.outputs.home }}
+      proof_hash: ${{ steps.digest.outputs.proof }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -20,6 +23,11 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npm run build
       - run: python scripts/check-site.py
+      - name: Record the tested HTML
+        id: digest
+        run: |
+          echo "home=$(sha256sum dist/index.html | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+          echo "proof=$(sha256sum dist/examination/proof/index.html | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
       - name: Check desktop and mobile navigation
         run: |
           python -m pip install --quiet selenium
@@ -47,3 +55,24 @@ jobs:
       - uses: actions/configure-pages@v5
       - id: pages
         uses: actions/deploy-pages@v4
+      - name: Verify public homepage and proof against the tested files
+        env:
+          SITE_URL: ${{ steps.pages.outputs.page_url }}
+          HOME_HASH: ${{ needs.build.outputs.home_hash }}
+          PROOF_HASH: ${{ needs.build.outputs.proof_hash }}
+        run: |
+          verify() {
+            local url="$1" expected="$2"
+            for attempt in {1..12}; do
+              if curl --fail --silent --show-error --location --max-time 20 "$url" -o "$RUNNER_TEMP/page.html" &&
+                 echo "$expected  $RUNNER_TEMP/page.html" | sha256sum --check --status; then
+                echo "Verified $url against the production build"
+                return 0
+              fi
+              sleep 10
+            done
+            echo "::error::Public HTML differs from the tested build at $url"
+            return 1
+          }
+          verify "${SITE_URL%/}/" "$HOME_HASH"
+          verify "${SITE_URL%/}/examination/proof/" "$PROOF_HASH"
