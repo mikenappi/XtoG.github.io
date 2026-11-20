@@ -11,6 +11,7 @@ ORIGIN = "https://mikenappi.github.io"
 class Page(HTMLParser):
     def __init__(self, path):
         super().__init__()
+        self.is_error_page = path == ROOT / '404.html'
         self.links = []
         self.ids = set()
         self.feed(path.read_text(encoding="utf-8"))
@@ -19,13 +20,16 @@ class Page(HTMLParser):
         values = dict(attrs)
         if "id" in values:
             self.ids.add(values["id"])
+        # Pages serves the error document at arbitrary missing URLs.
+        if self.is_error_page and tag == "link" and values.get("rel") == "canonical":
+            return
         for key in ("href", "src"):
             if values.get(key):
                 self.links.append(values[key])
 
 
 pages = {path: Page(path) for path in ROOT.rglob("*.html")}
-if len(pages) < 10 or ROOT / "pagefind/pagefind.js" not in set(ROOT.rglob("pagefind.js")):
+if len(pages) < 10 or not (ROOT / "pagefind/pagefind.js").is_file():
     raise SystemExit("Expected all reading pages and the Pagefind search index")
 
 failures = []

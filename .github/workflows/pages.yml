@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: [main]
   push:
-    branches: [main, feature/starlight-argument]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -13,13 +13,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npm run build
       - run: python scripts/check-site.py
+      - name: Check desktop and mobile navigation
+        run: |
+          python -m pip install --quiet selenium
+          python scripts/check-navigation.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reader-previews
+          path: screenshots/
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         with:
