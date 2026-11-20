@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build && python3 scripts/check-site.py"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"

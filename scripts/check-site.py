@@ -1,11 +1,13 @@
 """Check the built reading paths, local resources and fragment destinations."""
 from html.parser import HTMLParser
 from pathlib import Path
+from os import environ
 from urllib.parse import unquote, urljoin, urlsplit
 
 ROOT = Path("dist")
-BASE = "/XtoG.github.io/"
-ORIGIN = "https://mikenappi.github.io"
+NETLIFY = environ.get("NETLIFY") == "true"
+BASE = "/" if NETLIFY else "/XtoG.github.io/"
+ORIGIN = environ["URL"].rstrip("/") if NETLIFY else "https://mikenappi.github.io"
 
 
 class Page(HTMLParser):
@@ -37,7 +39,7 @@ for path, page in pages.items():
     url = ORIGIN + BASE + path.relative_to(ROOT).as_posix()
     for link in page.links:
         target = urlsplit(urljoin(url, link))
-        if target.netloc != "mikenappi.github.io" or target.scheme != "https":
+        if target.netloc != urlsplit(ORIGIN).netloc or target.scheme != "https":
             continue
         if not target.path.startswith(BASE):
             failures.append(f"{path}: outside project path: {link}")

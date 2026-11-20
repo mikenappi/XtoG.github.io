@@ -21,6 +21,13 @@ jobs:
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
+      - name: Verify root-domain build
+        env:
+          NETLIFY: 'true'
+          URL: https://xtog.example
+        run: |
+          npm run build
+          python scripts/check-site.py
       - run: npm run build
       - run: python scripts/check-site.py
       - name: Record the tested HTML
