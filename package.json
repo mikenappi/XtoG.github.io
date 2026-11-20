@@ -11,5 +11,8 @@
     "astro": "5.16.6",
     "@astrojs/starlight": "0.37.1",
     "sharp": "0.34.5"
+  },
+  "overrides": {
+    "hast-util-select@^6.0.0": "6.0.4"
   }
 }
