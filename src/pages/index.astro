@@ -1,61 +1,46 @@
 ---
+import '../styles/space.css';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const chapters = [
-  ['contingency', 'Contingency and dependence', 'What explains the existence of something that could have been absent?'],
-  ['necessity', 'A necessary foundation', 'Can dependent things together account for their own existence?'],
-  ['mind', 'A mental foundation', 'What could explain the actuality of one possibility among several?'],
-  ['conclusion', 'The final conclusion', 'Which claims about the foundation follow from the premises?'],
-];
+const url = (path: string) => base + '/' + path + '/';
 ---
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width" />
-  <meta name="description" content="Follow an argument from contingent existence to a necessary mental foundation, and examine the objections at each step." />
-  <link rel="icon" href={base + '/favicon.svg'} type="image/svg+xml" />
-  <title>The Contingency Argument · X to G</title>
-</head>
-<body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header><a class="mark" href={base + '/'} aria-label="X to G home">X <i>to</i> G</a>
-    <nav aria-label="Primary"><a href="#chapters">Chapters</a><a href={base + '/examination/objections/'}>Objections</a><a href={base + '/glossary/'}>Glossary</a></nav>
-  </header>
-  <main id="main">
-    <section class="opening"><div><h1>The Contingency<br/><em>Argument</em></h1>
-      <p>Why does something exist when it could have failed to exist? Follow the argument from this question to a necessary mental foundation.</p>
-      <a class="start" href={base + '/overview/'}>Start reading</a>
-    </div><figure>
-      <svg viewBox="0 0 400 280" role="img" aria-labelledby="caption">
-        <defs><pattern id="hatch" patternUnits="userSpaceOnUse" width="5" height="5"><path d="M0 5 5 0" stroke="currentColor" stroke-width=".7"/></pattern></defs>
-        <g fill="none" stroke="currentColor"><circle cx="200" cy="140" r="116" stroke-dasharray="2 5"/><circle cx="200" cy="140" r="98"/><circle cx="200" cy="140" r="85" stroke-width=".5"/>
-        <path d="M200 42 285 189H115Z" fill="url(#hatch)"/><path d="M200 238 115 91H285Z"/><path d="M55 140H345M200 16V264" stroke-dasharray="3 5"/>
-        <circle cx="200" cy="140" r="49"/><circle cx="200" cy="140" r="4" fill="currentColor"/></g>
-      </svg><figcaption id="caption">Can a ground be found within what depends on it?</figcaption></figure>
-    </section>
-    <section id="chapters"><h2>Read the argument</h2><ol>{chapters.map(([slug, title, question], i) => <li><a href={base + '/argument/' + slug + '/'}><span class="numeral">{['I','II','III','IV'][i]}</span><div><h3>{title}</h3><p>{question}</p></div></a></li>)}</ol></section>
-  </main><footer><span>X to G</span><a href={base + '/examination/sources/'}>Sources and further reading</a></footer>
-</body></html>
+<html lang="en"><head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width"/>
+  <meta name="description" content="The contingency argument for a necessary mental foundation."/>
+  <title>The contingency argument · X to G</title>
+  <link rel="icon" href={base + '/favicon.svg'} />
+  <script is:inline src={base + '/reading-transition.js'}></script>
+</head><body class="argument-page">
+<main>
+  <h1>The contingency argument</h1>
+  <section id="dependence"><h2><a href={url('argument/contingency')}>Contingency and dependence</a></h2>
+    <p>Some things <a href={url('terms/contingent-existence')}>exist contingently</a>. They exist, and they could have failed to exist.</p>
+    <p>If a thing’s existence is entirely grounded in its <a href={url('terms/intrinsic-nature')}>intrinsic nature</a>, then it exists necessarily. A contingent thing therefore lacks a wholly intrinsic ground of existence.</p>
+    <p>The <a href={url('terms/restricted-principle-of-sufficient-reason')}>restricted Principle of Sufficient Reason</a> requires an explanation of contingent existence. If contingent existence <a href={url('objections/brute-existence')}>cannot be brute</a>, its <a href={url('terms/ground')}>ground</a> must involve something beyond the thing itself.</p>
+  </section>
+  <section id="necessity"><h2><a href={url('argument/necessity')}>A necessary foundation</a></h2>
+    <p>A chain of dependent things can explain each member by appeal to another. Such a chain still presupposes dependent existence. A complete ground of the <a href={url('terms/dependent-totality')}>dependent totality</a> must therefore <a href={url('objections/the-dependent-totality')}>include an independent existent</a>.</p>
+    <p>If that independent existent were contingent, it would require an external ground. Since it is independent, it <a href={url('objections/independent-but-contingent')}>cannot be contingent</a>. It has <a href={url('terms/necessary-existence')}>necessary existence</a>.</p>
+  </section>
+  <section id="mind"><h2><a href={url('argument/mind')}>A mental foundation</a></h2>
+    <p>The actual order could have been different. If a necessary ground determined this exact order by necessity, the order itself would be necessary.</p>
+    <p>An impersonal process could assign chances to several outcomes. The argument holds that those chances <a href={url('objections/impersonal-chance')}>leave open why this outcome occurred</a>. A complete ground must supply that <a href={url('terms/contrastive-explanation')}>contrastive explanation</a>.</p>
+    <p>If <a href={url('terms/intentional-selection')}>intentional selection</a> alone can settle which possibility becomes actual <a href={url('objections/selection-and-reasons')}>without making it necessary</a>, then the ultimate ground must be capable of representing and selecting among alternatives.</p>
+  </section>
+  <section id="conclusion"><h2><a href={url('argument/conclusion')}>Conclusion</a></h2>
+    <p>If the independent ground is what ultimately settles the contingent order, then contingent reality has a necessary mental foundation.</p>
+    <a class="proof" href={url('examination/proof')}>Formal logical proof</a>
+  </section>
+</main></body></html>
 <style>
   :global(*){box-sizing:border-box}
-  :global(html){background:#f7f6ef;color:#192e2a;font:100%/1.6 system-ui,sans-serif}
-  body{max-width:80rem;margin:auto;padding:0 clamp(1.2rem,5vw,5rem)}
-  a{color:inherit;text-underline-offset:.24em}
-  a:focus-visible{outline:3px solid #ab5230;outline-offset:4px}
-  .skip{position:absolute;top:-5rem;background:white;padding:.6rem}.skip:focus{top:.3rem}
-  header,footer,nav{display:flex;align-items:center;justify-content:space-between;gap:clamp(.75rem,3vw,2rem);flex-wrap:wrap}
-  header{min-height:5rem;border-bottom:1px solid #99aaa0}.mark{font:bold 1.7rem Georgia,serif;text-decoration:none}.mark i{font-weight:400;color:#88512d}
-  nav a,footer a{font-size:.9rem}nav a{text-decoration:none}nav a:hover{text-decoration:underline}
-  .opening{display:grid;grid-template-columns:1.3fr 1fr;align-items:center;gap:2rem;padding:clamp(3rem,7vw,7rem) 0}
-  h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:400;margin:0;line-height:1.06}
-  h1{font-size:clamp(3rem,7.5vw,7rem);letter-spacing:-.06em}h1 em{color:#316449;font-weight:400}
-  .opening p{max-width:35rem;font-size:1.13rem;margin:1.5rem 0}
-  .start{display:inline-block;background:#214b3e;color:white;padding:.67rem 1.35rem;text-decoration:none;border-radius:.25rem}
-  .start:hover{background:#316449}figure{margin:0;text-align:center;color:#36644f}svg{width:min(100%,27rem)}figcaption{font:italic 1rem/1.5 Georgia,serif}
-  #chapters{border-top:1px solid #99aaa0;padding:2.2rem 0}h2{font-size:2rem;letter-spacing:-.04em}
-  ol{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:3rem}
-  li{border-bottom:1px solid #c6cec4}li a{display:flex;gap:1.3rem;padding:1.5rem .3rem;text-decoration:none}li a:hover h3{text-decoration:underline}
-  .numeral{font:italic 1.25rem Georgia,serif;color:#7c4a29;min-width:2rem}h3{font-size:1.4rem}li p{margin:.5rem 0 0;color:#42584e}
-  footer{border-top:1px solid #99aaa0;padding:1.25rem 0 2rem}
-  @media(max-width:43rem){.opening,ol{grid-template-columns:1fr}.opening{gap:1rem}figure svg{max-height:11rem}header{padding:.8rem 0}}
-  @media(prefers-reduced-motion:no-preference){:global(html){scroll-behavior:smooth}.opening{animation:arrive .45s ease-out}.start{transition:background .16s}@keyframes arrive{from{opacity:0;transform:translateY(.4rem)}to{opacity:1;transform:none}}}
+  body{margin:0;color:#e6e6e8;font:1.125rem/1.7 Georgia,'Times New Roman',serif}
+  main{margin:auto;max-width:46rem;padding:clamp(3rem,8vw,7rem) 1.45rem 5rem}
+  h1,h2,p{margin:0}h1{font-size:clamp(2.5rem,6.5vw,4.7rem);font-weight:400;line-height:1.03;letter-spacing:-.05em;text-wrap:balance;margin-bottom:2.4rem}
+  section{border-top:1px solid #454548;padding:1.5rem 0 2rem}
+  h2{font:600 .92rem/1.5 system-ui,sans-serif;margin-bottom:1rem}
+  p+p{margin-top:.8rem}a{color:inherit;text-decoration-color:#78787d;text-underline-offset:.19em;text-decoration-thickness:1px}
+  a:hover,a:focus-visible{text-decoration-color:white;color:white}
+  a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+  .proof{font: .9rem system-ui,sans-serif;display:inline-block;margin-top:1rem}
 </style>

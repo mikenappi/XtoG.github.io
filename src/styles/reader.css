@@ -1,22 +1,28 @@
-:root {
-  --sl-color-accent-low: #193c30;
-  --sl-color-accent: #66b18e;
-  --sl-color-accent-high: #c1ead0;
-  --sl-content-width: 43rem;
-}
-:root[data-theme='light'] {
-  --sl-color-accent-low: #ddeee1;
-  --sl-color-accent: #316449;
-  --sl-color-accent-high: #194530;
-  --sl-color-bg: #faf9f4;
+@import './space.css';
+
+:root, :root[data-theme='light'] {
+  color-scheme: dark;
+  --sl-color-white: #f5f5f5;
+  --sl-color-gray-1: #e6e6e8;
+  --sl-color-gray-2: #ceced0;
+  --sl-color-gray-3: #aaaab0;
+  --sl-color-gray-4: #797980;
+  --sl-color-gray-5: #434348;
+  --sl-color-gray-6: #252528;
+  --sl-color-black: #0c0c0e;
+  --sl-color-bg: #0c0c0e;
+  --sl-color-bg-nav: #101012;
+  --sl-color-bg-sidebar: #101012;
+  --sl-color-text: #dedee0;
+  --sl-color-text-accent: #f6f6f7;
+  --sl-color-accent-low: #303034;
+  --sl-color-accent: #aaaab0;
+  --sl-color-accent-high: #eeeef0;
+  --sl-content-width: 44rem;
 }
 .site-title, main h1, .sl-markdown-content :is(h2,h3) {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: Georgia,'Times New Roman',serif;
+  font-weight: 400;
   letter-spacing: -.035em;
 }
 .sl-markdown-content { line-height: 1.8; }
-.sl-markdown-content blockquote { border-inline-start-color: var(--sl-color-accent); }
-@media (prefers-reduced-motion: no-preference) {
-  .sl-markdown-content { animation: reader-enter .2s ease-out; }
-  @keyframes reader-enter { from { opacity: .6; } to { opacity: 1; } }
-}

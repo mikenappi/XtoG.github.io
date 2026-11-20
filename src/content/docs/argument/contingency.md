@@ -16,4 +16,4 @@ This treats “exists” as a claim about whether there is an instance. No step 
 
 There is still a third possibility to address. Something whose existence lacks an intrinsic explanation might simply exist as a brute fact. The restricted PSR rules this out for contingent existence. Together, P2 and P5 yield the first result: whatever exists contingently requires a ground beyond itself.
 
-[Examine the brute-fact objection](../../examination/objections/#brute-existence).
+[Examine the brute-fact objection](../../objections/brute-existence/).

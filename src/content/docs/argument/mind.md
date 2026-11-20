@@ -16,4 +16,4 @@ Consider someone choosing between two routes home. Both remain open. The person 
 
 Extending that model to a foundation requires two claims. Reasons can sufficiently explain a selection without necessitating it, and only a ground capable of representing possibilities can settle the contrast in that way. An example of successful human agency supports the coherence of the proposal. Its exclusivity requires a further defense.
 
-[Compare chance and agency under the same explanatory standard](../../examination/objections/#selection-and-reasons).
+[Compare chance and agency under the same explanatory standard](../../objections/selection-and-reasons/).
