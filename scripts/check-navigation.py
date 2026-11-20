@@ -19,9 +19,9 @@ def check(browser, origin, width, height):
     assert browser.execute_script("return document.documentElement.scrollWidth <= innerWidth")
     assert browser.title == "X → G"
     headings = browser.find_elements(By.CSS_SELECTOR, "main section > h2")
-    assert [heading.text for heading in headings] == ["Supplementary argument", "I", "II", "III", "IV"]
+    assert [heading.text for heading in headings] == ["Supplementary Argument — The Brute-Factuality Challenge", "I", "II", "III", "IV"]
     marks = browser.find_elements(By.CSS_SELECTOR, "main sup")
-    assert [mark.get_attribute("id") for mark in marks] == [f"conclusion-{n}" for n in range(1, 8)]
+    assert [mark.get_attribute("id") for mark in marks] == [f"conclusion-{n}" for n in (8, 9, *range(1, 8))]
     browser.save_screenshot(f"screenshots/argument-{width}.png")
     for label, route, title in [
         ("exist contingently", "terms/contingent-existence/", "Contingent existence"),
