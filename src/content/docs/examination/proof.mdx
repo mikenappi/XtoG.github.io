@@ -1,0 +1,66 @@
+---
+title: Formal logical proof
+---
+
+import ProofLine from '../../../components/ProofLine.astro';
+
+<details>
+<summary>Notation</summary>
+
+Variables range over actual existents. **o** denotes the actual concrete order.
+
+| Symbol | Meaning |
+| --- | --- |
+| Cx, Nx | x has [contingent existence](../../terms/contingent-existence/) or [necessary existence](../../terms/necessary-existence/), respectively |
+| Sx, Ex | x is wholly self-grounded or externally grounded, respectively |
+| Gx | x contributes to the complete ground of the [dependent totality](../../terms/dependent-totality/) |
+| Ux | x ultimately settles why this order is actual |
+| Ix | x is wholly impersonal |
+| Dx | x necessitates this order from a necessary basis |
+| Kx | x produces the outcome through impersonal indeterminism |
+| Tx | x settles the order by [intentional selection](../../terms/intentional-selection/) |
+| Mx | x has mental capacity |
+| ∀, ∃, ¬ | for all, there exists, negation |
+| ∧, ∨, →, ↔ | conjunction, inclusive disjunction, implication, equivalence |
+
+</details>
+
+<ProofLine n={1} formula="∀x (Sx → Nx)">The modal bridge. If a thing’s intrinsic nature fully accounts for its existence, that existence is necessary.</ProofLine>
+
+<ProofLine n={2} formula="∀x (Cx ↔ ¬Nx)">For an actual existent, contingency and necessity exhaust the modal alternatives.</ProofLine>
+
+<ProofLine n={3} formula="∀x (Cx → (Sx ∨ Ex))">The restricted PSR requires a sufficient explanation for contingent existence. Its ground is either wholly intrinsic or involves something external.</ProofLine>
+
+<ProofLine n={4} formula="∀x (Cx → ¬Sx)">From 1 and 2. For an arbitrary contingent existent, necessity is false, so modus tollens rules out a wholly intrinsic ground.</ProofLine>
+
+<ProofLine n={5} formula="∀x (Cx → Ex)">From 3 and 4 by disjunctive syllogism. Removing the intrinsic alternative leaves an external ground.</ProofLine>
+
+<ProofLine n={6} formula="∃x Gx">The dependent totality exists and has a complete ground with at least one contributor. This applies the explanatory demand to dependent reality collectively.</ProofLine>
+
+<ProofLine n={7} formula="(∃x Gx) → ∃x (Gx ∧ ¬Ex)">The totality premise. A complete ground made entirely of dependent contributors would presuppose the dependent reality it is meant to explain.</ProofLine>
+
+<ProofLine n={8} formula="∃x (Gx ∧ ¬Ex)">From 6 and 7 by modus ponens.</ProofLine>
+
+<ProofLine n={9} formula="∀x (¬Ex → Nx)">From 5 by contraposition and 2 by the modal distinction. An actual independent existent is necessary.</ProofLine>
+
+<ProofLine n={10} formula="∃x (Gx ∧ ¬Ex ∧ Nx)">From 8 and 9. Apply 9 to the independent contributor whose existence is established in 8.</ProofLine>
+
+<ProofLine n={11} formula="Co">The actual concrete order could have been otherwise.</ProofLine>
+
+<ProofLine n={12} formula="∀x ((Ux ∧ Ix) → (Dx ∨ Kx))">The proposed alternatives for an entirely impersonal ultimate ground are necessitating determination and impersonal indeterminism.</ProofLine>
+
+<ProofLine n={13} formula="∀x (Dx → No)">If the necessary basis determines this exact order by necessity, the actual order is necessary.</ProofLine>
+
+<ProofLine n={14} formula="∀x (Kx → ¬Ux)">The contrastive premise. An impersonal distribution gives the chances of alternatives while leaving open which one is realized.</ProofLine>
+
+<ProofLine n={15} formula="∀x (Ux → ¬Ix)">From 2 and 11 the order is not necessary, ruling out determination by 13. For a ground that settles the order, 14 rules out indeterminism. By 12, that ground cannot be wholly impersonal.</ProofLine>
+
+<ProofLine n={16} formula="∀x ((Ux ∧ ¬Ix) → Tx)">The selection premise. An ultimate ground that settles the contrast beyond impersonal determination or chance does so through intentional selection. This is a substantive claim about the alternatives.</ProofLine>
+
+<ProofLine n={17} formula="∀x (Tx → Mx)">Selecting intentionally requires a capacity to represent possibilities, which is a mental capacity.</ProofLine>
+
+<ProofLine n={18} formula="∀x (Ux → Mx)">From 15–17. Any ground that ultimately settles which order is actual must have mental capacity.</ProofLine>
+
+<ProofLine n={19} formula="(∃x (Gx ∧ ¬Ex)) → ∃x (Gx ∧ ¬Ex ∧ Ux)">The identification premise. At least one independent contributor to the ground of dependent reality is itself what settles the actual order. This premise connects the two parts of the proof.</ProofLine>
+
+<ProofLine n={20} formula="∃x (Gx ∧ ¬Ex ∧ Ux ∧ Nx ∧ Mx)">From 8 and 19, take one witness that is both independent and settles the order. Apply 9 and 18 to that same witness. The resulting foundation is necessary and mental.</ProofLine>

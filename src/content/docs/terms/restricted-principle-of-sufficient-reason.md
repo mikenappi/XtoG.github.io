@@ -2,5 +2,5 @@
 title: Restricted Principle of Sufficient Reason (PSR)
 ---
 
-Every instance of contingent existence has a sufficient explanation for its actuality.
+Every instance of [contingent existence](../../terms/contingent-existence/) has a sufficient explanation for its actuality.
 

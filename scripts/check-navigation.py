@@ -19,7 +19,7 @@ def check(browser, origin, width, height):
     assert browser.execute_script("return document.documentElement.scrollWidth <= innerWidth")
     assert browser.title == "X → G"
     headings = browser.find_elements(By.CSS_SELECTOR, "main section > h2")
-    assert [heading.text for heading in headings] == ["Supplementary Argument — The Brute-Factuality Challenge", "I", "II", "III", "IV"]
+    assert [heading.text for heading in headings] == ["S", "I", "II", "III", "IV"]
     marks = browser.find_elements(By.CSS_SELECTOR, "main sup")
     premises = browser.find_elements(By.CSS_SELECTOR, "#preface .premise")
     assert [p.text for p in premises] == ["S1.", "S2.", "S3."]
@@ -27,6 +27,9 @@ def check(browser, origin, width, height):
     assert labels == ["SC1.", "SC2."] + [f"C{n}." for n in range(1, 8)]
     browser.save_screenshot(f"screenshots/argument-{width}.png")
     for label, route, title in [
+        ("brute fact", "terms/brute-fact/", "Brute fact"),
+        ("Presupposing inexplicability", "terms/presupposing-inexplicability/", "Presupposing inexplicability"),
+        ("Formal logical proof", "examination/proof/", "Formal logical proof"),
         ("exist contingently", "terms/contingent-existence/", "Contingent existence"),
         ("cannot be brute", "objections/brute-existence/", "Brute existence"),
         ("II", "argument/necessity/", "A necessary foundation"),
@@ -36,6 +39,14 @@ def check(browser, origin, width, height):
         assert browser.find_element(By.TAG_NAME, "h1").text == title
         assert browser.execute_script("return document.documentElement.scrollWidth <= innerWidth")
         assert not browser.find_elements(By.CSS_SELECTOR, 'nav.sidebar, starlight-menu-button, .right-sidebar')
+        if route == "examination/proof/":
+            steps = browser.find_elements(By.CSS_SELECTOR, "main .line details")
+            assert len(steps) == 20 and all(step.get_attribute("open") is None for step in steps)
+            toggle = steps[-1].find_element(By.TAG_NAME, "summary")
+            toggle.click()
+            assert "same witness" in steps[-1].text
+            toggle.click()
+            assert steps[-1].get_attribute("open") is None
         if route.startswith("objections/"):
             browser.save_screenshot(f"screenshots/objection-{width}.png")
         browser.find_element(By.LINK_TEXT, "Close").click()

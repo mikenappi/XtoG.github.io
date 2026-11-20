@@ -2,7 +2,7 @@
 title: A necessary foundation
 ---
 
-Suppose every dependent thing has a ground in another dependent thing. Following the links might take us arbitrarily far. At each step we learn what an individual depends on. Have we thereby explained why there are any dependent things at all?
+Suppose every dependent thing has a [ground](../../terms/ground/) in another dependent thing. Following the links might take us arbitrarily far. At each step we learn what an individual depends on. Have we thereby explained why there are any dependent things at all?
 
 ## P8–P10 · The dependent totality
 
@@ -12,6 +12,6 @@ The controversial premise is that a complete ground of the collective fact must 
 
 ## P12 · Why must an independent ground be necessary?
 
-Assume an independent ground could have failed to exist. By the result of [Part I](../contingency/), it would require a ground beyond itself. That contradicts its independence. Given the distinction between contingent and necessary existence, an actual independent ground therefore exists necessarily.
+Assume an independent ground could have failed to exist. By the result of [Part I](../contingency/), it would require a ground beyond itself. That contradicts its independence. Given the distinction between contingent and [necessary existence](../../terms/necessary-existence/), an actual independent ground therefore exists necessarily.
 
 Independence alone supplies no modal conclusion. The inference depends on the earlier bridge and restricted PSR. [Examine the totality objection](../../objections/the-dependent-totality/) or [the independent-but-contingent objection](../../objections/independent-but-contingent/).

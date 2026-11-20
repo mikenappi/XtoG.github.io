@@ -10,3 +10,7 @@ title: Glossary
 - [Dependent totality](../terms/dependent-totality/)
 - [Contrastive explanation](../terms/contrastive-explanation/)
 - [Intentional selection](../terms/intentional-selection/)
+- [Brute fact](../terms/brute-fact/)
+- [Brute existence](../terms/brute-existence/)
+- [Brute emergence](../terms/brute-emergence/)
+- [Presupposing inexplicability](../terms/presupposing-inexplicability/)

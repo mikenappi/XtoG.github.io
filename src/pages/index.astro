@@ -14,13 +14,13 @@ const url = (path: string) => base + '/' + path + '/';
 </head><body class="argument-page">
 <main>
   <h1>X → G</h1>
-  <section id="preface"><h2>Supplementary Argument — The Brute-Factuality Challenge</h2>
-    <p><span class="premise">S1.</span> A <a href={url('objections/brute-existence')}>brute fact</a> is a fact whose obtaining lacks a sufficient explanation.</p>
+  <section id="preface"><h2 aria-label="Supplementary Argument — The Brute-Factuality Challenge"><span class="sideways-s" aria-hidden="true">S</span></h2>
+    <p><span class="premise">S1.</span> A <a href={url('terms/brute-fact')}>brute fact</a> is a fact whose obtaining lacks a sufficient explanation.</p>
     <p><span class="premise">S2.</span> Asserting that a particular fact is brute requires grounds for affirming its actual inexplicability.</p>
-    <p><span class="premise">S3.</span> Presupposing inexplicability is circular, and pointing to the absence of a known explanation does not demonstrate that no explanation is possible.</p>
-    <p><ConclusionMark n={1} supplementary /> Therefore, a categorical appeal to brute existence or brute emergence remains unsubstantiated unless independent justification is provided.</p>
+    <p><span class="premise">S3.</span> <a href={url('terms/presupposing-inexplicability')}>Presupposing inexplicability</a> is circular, and pointing to the absence of a known explanation does not demonstrate that no explanation is possible.</p>
+    <p><ConclusionMark n={1} supplementary /> Therefore, a categorical appeal to <a href={url('terms/brute-existence')}>brute existence</a> or <a href={url('terms/brute-emergence')}>brute emergence</a> remains unsubstantiated unless independent justification is provided.</p>
     <p><ConclusionMark n={2} supplementary /> Consequently, merely proposing brute existence does not establish a refutation of the argument for necessary grounding.</p>
-    <p>You can suspend judgment about brute factuality without accepting the argument's conclusion. That suspension, however, does not itself establish that existence is brute or that an ultimate ground is impossible.</p>
+    <p>You can suspend judgment about brute factuality without accepting the argument's conclusion. That suspension, however, does not establish that your assertation is right and the assertion of inexplicability in any such case is wrong.</p>
   </section>
   <section id="dependence"><h2><a href={url('argument/contingency')} aria-label="Part I: Contingency and dependence">I</a></h2>
     <p>Some things <a href={url('terms/contingent-existence')}>exist contingently</a>. They exist, and they could have failed to exist.</p>
@@ -52,6 +52,7 @@ const url = (path: string) => base + '/' + path + '/';
   p+p{margin-top:.8rem}a{color:inherit;text-decoration-color:#78787d;text-underline-offset:.19em;text-decoration-thickness:1px}
   a:hover,a:focus-visible{text-decoration-color:white;color:white}
   a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+  .sideways-s{display:inline-block;transform:rotate(90deg);font:600 1.1rem/1 system-ui,sans-serif}
   .premise{font:600 .75em/1 system-ui,sans-serif;color:#bebec4;-webkit-text-stroke:0}
   .proof{font: .9rem system-ui,sans-serif;display:inline-block;margin-top:1rem}
 </style>

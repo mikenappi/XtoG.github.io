@@ -6,9 +6,9 @@ Suppose a necessary foundation exists and the concrete order it grounds is conti
 
 ## P19 · The impersonal alternative
 
-If the foundation's intrinsic nature necessarily determines this exact order, the order could never have been different. That conflicts with the starting contingency. An impersonal probabilistic process offers a stronger alternative. The same basis could allow several outcomes and assign each a chance.
+If the foundation's [intrinsic nature](../../terms/intrinsic-nature/) necessarily determines this exact order, the order could never have been different. That conflicts with the starting contingency. An impersonal probabilistic process offers a stronger alternative. The same basis could allow several outcomes and assign each a chance.
 
-The argument now needs a contrastive standard of sufficiency. A probability distribution explains why an outcome was eligible and how likely it was. Does it explain why this eligible outcome actually occurred? P19 treats an answer to that further question as necessary for a complete ground.
+The argument now needs a contrastive standard of sufficiency. A probability distribution explains why an outcome was eligible and how likely it was. Does it explain why this eligible outcome actually occurred? P19 treats an answer to that further question as necessary for a complete [ground](../../terms/ground/).
 
 ## P20–P21 · Intentional selection
 
