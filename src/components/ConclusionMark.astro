@@ -1,0 +1,9 @@
+---
+interface Props { n: number }
+const { n } = Astro.props;
+---
+<sup id={'conclusion-' + n}><span class="sr-only">Conclusion </span>#{n}</sup>
+<style>
+  sup { font:600 .65em/0 system-ui,sans-serif; color:#bebec4; vertical-align:super; white-space:nowrap; -webkit-text-stroke:0; }
+  .sr-only { position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%); }
+</style>

@@ -5,7 +5,7 @@ export default defineConfig({
   site: 'https://mikenappi.github.io',
   base: '/XtoG.github.io',
   integrations: [starlight({
-    title: 'X to G',
+    title: 'X → G',
     description: 'A philosophical argument from contingency to a necessary mental foundation.',
     head: [{ tag: 'script', attrs: { src: '/XtoG.github.io/reading-transition.js' } }],
     components: {

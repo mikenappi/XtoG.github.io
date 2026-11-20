@@ -1,5 +1,6 @@
 ---
 import '../styles/space.css';
+import ConclusionMark from '../components/ConclusionMark.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const url = (path: string) => base + '/' + path + '/';
 ---
@@ -7,28 +8,33 @@ const url = (path: string) => base + '/' + path + '/';
 <html lang="en"><head>
   <meta charset="utf-8"/><meta name="viewport" content="width=device-width"/>
   <meta name="description" content="The contingency argument for a necessary mental foundation."/>
-  <title>The contingency argument · X to G</title>
+  <title>X → G</title>
   <link rel="icon" href={base + '/favicon.svg'} />
   <script is:inline src={base + '/reading-transition.js'}></script>
 </head><body class="argument-page">
 <main>
-  <h1>The contingency argument</h1>
-  <section id="dependence"><h2><a href={url('argument/contingency')}>Contingency and dependence</a></h2>
+  <h1>X → G</h1>
+  <section id="preface"><h2>Supplementary argument</h2>
+    <p>That a thing could have failed to exist tells us how its existence could vary. This alone gives us no reason to say its actual existence is <a href={url('objections/brute-existence')}>brute</a>.</p>
+    <p>To deny the <a href={url('terms/restricted-principle-of-sufficient-reason')}>restricted Principle of Sufficient Reason</a> is to claim that at least one contingent existent has no sufficient explanation. A reason for drawing the explanatory boundary there would support that claim. An unexplained exception simply assumes the point at issue.</p>
+    <p><ConclusionMark n={1} /> In the absence of such a reason, one can suspend judgment about the ground. Possible absence alone gives no warrant for ruling out necessary grounding.</p>
+  </section>
+  <section id="dependence"><h2><a href={url('argument/contingency')} aria-label="Part I: Contingency and dependence">I</a></h2>
     <p>Some things <a href={url('terms/contingent-existence')}>exist contingently</a>. They exist, and they could have failed to exist.</p>
-    <p>If a thing’s existence is entirely grounded in its <a href={url('terms/intrinsic-nature')}>intrinsic nature</a>, then it exists necessarily. A contingent thing therefore lacks a wholly intrinsic ground of existence.</p>
-    <p>The <a href={url('terms/restricted-principle-of-sufficient-reason')}>restricted Principle of Sufficient Reason</a> requires an explanation of contingent existence. If contingent existence <a href={url('objections/brute-existence')}>cannot be brute</a>, its <a href={url('terms/ground')}>ground</a> must involve something beyond the thing itself.</p>
+    <p>If a thing’s existence is entirely grounded in its <a href={url('terms/intrinsic-nature')}>intrinsic nature</a>, then it exists necessarily. <ConclusionMark n={2} /> A contingent thing therefore lacks a wholly intrinsic ground of existence.</p>
+    <p>The <a href={url('terms/restricted-principle-of-sufficient-reason')}>restricted Principle of Sufficient Reason</a> requires an explanation of contingent existence. <ConclusionMark n={3} /> If contingent existence <a href={url('objections/brute-existence')}>cannot be brute</a>, its <a href={url('terms/ground')}>ground</a> must involve something beyond the thing itself.</p>
   </section>
-  <section id="necessity"><h2><a href={url('argument/necessity')}>A necessary foundation</a></h2>
-    <p>A chain of dependent things can explain each member by appeal to another. Such a chain still presupposes dependent existence. A complete ground of the <a href={url('terms/dependent-totality')}>dependent totality</a> must therefore <a href={url('objections/the-dependent-totality')}>include an independent existent</a>.</p>
-    <p>If that independent existent were contingent, it would require an external ground. Since it is independent, it <a href={url('objections/independent-but-contingent')}>cannot be contingent</a>. It has <a href={url('terms/necessary-existence')}>necessary existence</a>.</p>
+  <section id="necessity"><h2><a href={url('argument/necessity')} aria-label="Part II: A necessary foundation">II</a></h2>
+    <p>A chain of dependent things can explain each member by appeal to another. Such a chain still presupposes dependent existence. <ConclusionMark n={4} /> A complete ground of the <a href={url('terms/dependent-totality')}>dependent totality</a> must therefore <a href={url('objections/the-dependent-totality')}>include an independent existent</a>.</p>
+    <p>If that independent existent were contingent, it would require an external ground. Since it is independent, it <a href={url('objections/independent-but-contingent')}>cannot be contingent</a>. <ConclusionMark n={5} /> It has <a href={url('terms/necessary-existence')}>necessary existence</a>.</p>
   </section>
-  <section id="mind"><h2><a href={url('argument/mind')}>A mental foundation</a></h2>
+  <section id="mind"><h2><a href={url('argument/mind')} aria-label="Part III: A mental foundation">III</a></h2>
     <p>The actual order could have been different. If a necessary ground determined this exact order by necessity, the order itself would be necessary.</p>
     <p>An impersonal process could assign chances to several outcomes. The argument holds that those chances <a href={url('objections/impersonal-chance')}>leave open why this outcome occurred</a>. A complete ground must supply that <a href={url('terms/contrastive-explanation')}>contrastive explanation</a>.</p>
-    <p>If <a href={url('terms/intentional-selection')}>intentional selection</a> alone can settle which possibility becomes actual <a href={url('objections/selection-and-reasons')}>without making it necessary</a>, then the ultimate ground must be capable of representing and selecting among alternatives.</p>
+    <p>If <a href={url('terms/intentional-selection')}>intentional selection</a> alone can settle which possibility becomes actual <a href={url('objections/selection-and-reasons')}>without making it necessary</a>, <ConclusionMark n={6} /> then the ultimate ground must be capable of representing and selecting among alternatives.</p>
   </section>
-  <section id="conclusion"><h2><a href={url('argument/conclusion')}>Conclusion</a></h2>
-    <p>If the independent ground is what ultimately settles the contingent order, then contingent reality has a necessary mental foundation.</p>
+  <section id="conclusion"><h2><a href={url('argument/conclusion')} aria-label="Part IV: Conclusion">IV</a></h2>
+    <p><ConclusionMark n={7} /> If the independent ground is what ultimately settles the contingent order, then contingent reality has a necessary mental foundation.</p>
     <a class="proof" href={url('examination/proof')}>Formal logical proof</a>
   </section>
 </main></body></html>
