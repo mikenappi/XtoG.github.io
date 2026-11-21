@@ -11,7 +11,7 @@ export default defineConfig({
   base,
   integrations: [starlight({
     title: 'X → G',
-    description: 'A philosophical argument from contingency to a necessary mental foundation.',
+    description: 'An argument for a necessary mental foundation of reality.',
     head: [{ tag: 'script', attrs: { src: `${base.replace(/\/$/, '')}/reading-transition.js` } }],
     components: {
       PageTitle: './src/components/ReadingTitle.astro',
