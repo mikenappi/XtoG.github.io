@@ -43,6 +43,16 @@ def check(browser, origin, width, height):
         if route == "examination/proof/":
             steps = browser.find_elements(By.CSS_SELECTOR, "main details.line")
             assert len(steps) == 20 and all(step.get_attribute("open") is None for step in steps)
+            # A theme-generated chevron once displaced every formula into the number column.
+            for step in steps:
+                row = step.find_element(By.TAG_NAME, "summary").rect
+                number = step.find_element(By.CLASS_NAME, "number").rect
+                formula = step.find_element(By.CLASS_NAME, "formula").rect
+                assert formula["x"] >= number["x"] + number["width"]
+                assert formula["width"] > row["width"] * 0.75
+                assert abs(number["y"] - formula["y"]) < 12
+            assert steps[0].find_element(By.CLASS_NAME, "formula").rect["height"] < 36
+            browser.save_screenshot(f"screenshots/proof-{width}.png")
             toggle = steps[-1].find_element(By.TAG_NAME, "summary")
             assert "∃x" in toggle.text and "reason" not in toggle.text.lower()
             toggle.send_keys("\ue007")
