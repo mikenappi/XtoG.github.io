@@ -2,7 +2,6 @@
   <div class="layer far"></div>
   <div class="layer near"></div>
 </div>
-<button class="star-control" type="button" aria-pressed="false" hidden>Animate stars</button>
 
 <style>
   .star-field {
@@ -48,18 +47,10 @@
   }
   .star-field[data-moving] .layer::before { animation: drift var(--duration) linear infinite; }
   @keyframes drift { to { transform: translate3d(var(--travel-x), var(--travel-y), 0); } }
-  .star-control {
-    position:fixed; bottom:1rem; left:1rem; z-index:2; padding:.4rem .75rem;
-    color:#dedee0; background:#151517; border:1px solid #555; border-radius:2rem;
-    font:500 .85rem system-ui; cursor:pointer;
-  }
 </style>
 
 <script>
   const field = document.querySelector<HTMLElement>('.star-field')!;
-  const control = document.querySelector<HTMLButtonElement>('.star-control')!;
-  let optedIn = false;
-  try { optedIn = sessionStorage.getItem('xtog-star-motion') === 'on'; } catch { /* Storage is optional. */ }
   const layers = [...document.querySelectorAll<HTMLElement>('.star-field .layer')].map(element => {
     const style = getComputedStyle(element);
     return { element, period: parseFloat(style.getPropertyValue('--period')), depth: Number(style.getPropertyValue('--depth')) };
@@ -80,22 +71,14 @@
     window.removeEventListener('scroll', schedule);
     cancelAnimationFrame(frame);
     frame = 0;
-    const moving = !reduced.matches || optedIn;
+    const moving = !reduced.matches;
     field.toggleAttribute('data-moving', moving);
-    control.hidden = !reduced.matches;
-    control.textContent = moving ? 'Pause stars' : 'Animate stars';
-    control.setAttribute('aria-pressed', String(moving));
     if (!moving) layers.forEach(({element}) => element.style.removeProperty('--offset'));
     if (moving) {
       update();
       window.addEventListener('scroll', schedule, { passive: true });
     }
   }
-  control.addEventListener('click', () => {
-    optedIn = !optedIn;
-    try { sessionStorage.setItem('xtog-star-motion', optedIn ? 'on' : 'off'); } catch { /* Use the page preference. */ }
-    syncMotion();
-  });
   reduced.addEventListener('change', syncMotion);
   window.addEventListener('pageshow', syncMotion);
   syncMotion();
