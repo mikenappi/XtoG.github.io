@@ -2,6 +2,7 @@
   <div class="layer far"></div>
   <div class="layer near"></div>
 </div>
+<button class="star-control" type="button" aria-pressed="false" hidden>Animate stars</button>
 
 <style>
   .star-field {
@@ -27,34 +28,38 @@
     background-size: var(--period) var(--period);
   }
   .far {
-    --stars: radial-gradient(.9px at 8% 13%, #777780 50%, transparent),
+    --stars: radial-gradient(1.2px at 8% 13%, #939398 50%, transparent),
              radial-gradient(.85px at 62% 74%, #66666e 55%, transparent),
              radial-gradient(1px at 87% 37%, #515158 55%, transparent),
              radial-gradient(.8px at 33% 53%, #55555d 55%, transparent);
     --travel-x: var(--period);
     --travel-y: calc(-1 * var(--period));
-    --duration: 185s;
+    --duration: 70s;
   }
   .near {
     --period: 317px;
     --depth: .28;
-    --stars: radial-gradient(1.25px at 31% 17%, #95959c 45%, transparent),
-             radial-gradient(1px at 72% 46%, #797981 55%, transparent),
-             radial-gradient(1.1px at 19% 82%, #65656c 50%, transparent);
+    --stars: radial-gradient(2px at 31% 17%, #ceced2 55%, transparent),
+             radial-gradient(1.6px at 72% 46%, #a2a2a8 55%, transparent),
+             radial-gradient(1.45px at 19% 82%, #99999e 55%, transparent);
     --travel-x: calc(-1 * var(--period));
     --travel-y: var(--period);
-    --duration: 123s;
+    --duration: 25s;
   }
-  @media (prefers-reduced-motion: no-preference) {
-    .layer::before { animation: drift var(--duration) linear infinite; }
-    @keyframes drift { to { transform: translate3d(var(--travel-x), var(--travel-y), 0); } }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .layer { transform: none; }
+  .star-field[data-moving] .layer::before { animation: drift var(--duration) linear infinite; }
+  @keyframes drift { to { transform: translate3d(var(--travel-x), var(--travel-y), 0); } }
+  .star-control {
+    position:fixed; bottom:1rem; left:1rem; z-index:2; padding:.4rem .75rem;
+    color:#dedee0; background:#151517; border:1px solid #555; border-radius:2rem;
+    font:500 .85rem system-ui; cursor:pointer;
   }
 </style>
 
 <script>
+  const field = document.querySelector<HTMLElement>('.star-field')!;
+  const control = document.querySelector<HTMLButtonElement>('.star-control')!;
+  let optedIn = false;
+  try { optedIn = sessionStorage.getItem('xtog-star-motion') === 'on'; } catch { /* Storage is optional. */ }
   const layers = [...document.querySelectorAll<HTMLElement>('.star-field .layer')].map(element => {
     const style = getComputedStyle(element);
     return { element, period: parseFloat(style.getPropertyValue('--period')), depth: Number(style.getPropertyValue('--depth')) };
@@ -75,11 +80,22 @@
     window.removeEventListener('scroll', schedule);
     cancelAnimationFrame(frame);
     frame = 0;
-    if (!reduced.matches) {
+    const moving = !reduced.matches || optedIn;
+    field.toggleAttribute('data-moving', moving);
+    control.hidden = !reduced.matches;
+    control.textContent = moving ? 'Pause stars' : 'Animate stars';
+    control.setAttribute('aria-pressed', String(moving));
+    if (!moving) layers.forEach(({element}) => element.style.removeProperty('--offset'));
+    if (moving) {
       update();
       window.addEventListener('scroll', schedule, { passive: true });
     }
   }
+  control.addEventListener('click', () => {
+    optedIn = !optedIn;
+    try { sessionStorage.setItem('xtog-star-motion', optedIn ? 'on' : 'off'); } catch { /* Use the page preference. */ }
+    syncMotion();
+  });
   reduced.addEventListener('change', syncMotion);
   window.addEventListener('pageshow', syncMotion);
   syncMotion();
