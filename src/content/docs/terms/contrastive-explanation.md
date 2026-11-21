@@ -1,6 +1,5 @@
 ---
-title: Contrastive explanation
+title: "A complete ground of the actual order supplies a contrastive explanation of its actuality."
 ---
 
-An account of why this outcome occurred when another was possible.
-
+**Contrastive explanation.** An account of why this outcome occurred when another was possible.

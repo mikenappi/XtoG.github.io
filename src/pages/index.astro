@@ -16,28 +16,50 @@ const url = (path: string) => base + '/' + path + '/';
   <h1>X → G</h1>
   <section id="preface"><h2 aria-label="Supplementary Argument — The Brute-Factuality Challenge"><span class="sideways-s" aria-hidden="true">S</span></h2>
     <p><span class="premise">S1.</span> A <a href={url('terms/brute-fact')}>brute fact</a> is a fact whose obtaining lacks a sufficient explanation.</p>
-    <p><span class="premise">S2.</span> Asserting that a particular fact is brute requires grounds for affirming its actual inexplicability.</p>
-    <p><span class="premise">S3.</span> <a href={url('terms/presupposing-inexplicability')}>Presupposing inexplicability</a> is circular, and pointing to the absence of a known explanation does not demonstrate that no explanation is possible.</p>
-    <p><ConclusionMark n={1} supplementary /> Therefore, a categorical appeal to <a href={url('terms/brute-existence')}>brute existence</a> or <a href={url('terms/brute-emergence')}>brute emergence</a> remains unsubstantiated unless independent justification is provided.</p>
-    <p><ConclusionMark n={2} supplementary /> Consequently, merely proposing brute existence does not establish a refutation of the argument for necessary grounding.</p>
-    <p>You can suspend judgment about brute factuality without accepting the argument's conclusion. That suspension, however, does not establish that your assertation is right and the assertion of inexplicability in any such case is wrong.</p>
+    <p><span class="premise">S2.</span> To assert that a fact is brute, you need independent grounds for claiming that it lacks a sufficient explanation.</p>
+    <p><span class="premise">S3.</span> <a href={url('terms/presupposing-inexplicability')}>Presupposing inexplicability</a> assumes the claim that requires justification.</p>
+    <p>The absence of a known explanation does not establish that no explanation exists.</p>
+    <p><ConclusionMark n={1} supplementary /> A categorical appeal to <a href={url('terms/brute-existence')}>brute existence</a> or <a href={url('terms/brute-emergence')}>brute emergence</a> requires independent justification.</p>
+    <p><ConclusionMark n={2} supplementary /> Merely proposing brute existence does not refute the argument for necessary grounding.</p>
+    <p>You can suspend judgment about brute factuality without accepting the argument’s conclusion.</p>
+    <p>That suspension, however, does not establish that your assertion is right and the assertion of explicability in any such case is wrong.</p>
   </section>
-  <section id="dependence"><h2><a href={url('argument/contingency')} aria-label="Part I: Contingency and dependence">I</a></h2>
-    <p>Some things <a href={url('terms/contingent-existence')}>exist contingently</a>. They exist, and they could have failed to exist.</p>
-    <p>If a thing’s existence is entirely grounded in its <a href={url('terms/intrinsic-nature')}>intrinsic nature</a>, then it exists necessarily. <ConclusionMark n={1} /> A contingent thing therefore lacks a wholly intrinsic ground of existence.</p>
-    <p>The <a href={url('terms/restricted-principle-of-sufficient-reason')}>restricted Principle of Sufficient Reason</a> requires an explanation of contingent existence. <ConclusionMark n={2} /> If contingent existence <a href={url('objections/brute-existence')}>cannot be brute</a>, its <a href={url('terms/ground')}>ground</a> must involve something beyond the thing itself.</p>
+  <section id="dependence"><h2><a href={url('argument/contingency')}>I</a></h2>
+    <p><span class="premise">P1.</span> Something <a href={url('terms/contingent-existence')}>exists contingently</a>.</p>
+    <p><span class="premise">P2.</span> If a thing’s <a href={url('terms/intrinsic-nature')}>intrinsic nature</a> fully grounds its existence, then it exists necessarily.</p>
+    <p><span class="premise">P3.</span> Whatever exists contingently could have failed to exist.</p>
+    <p><ConclusionMark n={1} /> A contingent existent lacks a wholly intrinsic sufficient ground of existence.</p>
+    <p><span class="premise">P4.</span> A sufficient ground of existence is either wholly intrinsic or at least partly external.</p>
+    <p><span class="premise">P5.</span> The <a href={url('terms/restricted-principle-of-sufficient-reason')}>restricted Principle of Sufficient Reason</a> states that every contingent existent has a sufficient explanation of its existence.</p>
+    <p><ConclusionMark n={2} /> Every contingent existent has an external <a href={url('terms/ground')}>ground</a> of existence.</p>
   </section>
-  <section id="necessity"><h2><a href={url('argument/necessity')} aria-label="Part II: A necessary foundation">II</a></h2>
-    <p>A chain of dependent things can explain each member by appeal to another. Such a chain still presupposes dependent existence. <ConclusionMark n={3} /> A complete ground of the <a href={url('terms/dependent-totality')}>dependent totality</a> must therefore <a href={url('objections/the-dependent-totality')}>include an independent existent</a>.</p>
-    <p>If that independent existent were contingent, it would require an external ground. Since it is independent, it <a href={url('objections/independent-but-contingent')}>cannot be contingent</a>. <ConclusionMark n={4} /> It has <a href={url('terms/necessary-existence')}>necessary existence</a>.</p>
+  <section id="necessity"><h2><a href={url('argument/necessity')}>II</a></h2>
+    <p><span class="premise">P6.</span> At least one existent depends on a ground beyond itself.</p>
+    <p><span class="premise">P7.</span> The <a href={url('terms/dependent-totality')}>dependent totality</a> has a complete ground.</p>
+    <p><span class="premise">P8.</span> Each explanation that appeals to another dependent existent presupposes that dependent reality exists.</p>
+    <p><span class="premise">P9.</span> A complete explanation of why dependent reality exists cannot presuppose that dependent reality exists.</p>
+    <p><ConclusionMark n={3} /> The complete ground of dependent reality <a href={url('objections/the-dependent-totality')}>includes an independent existent</a>.</p>
+    <p><span class="premise">P10.</span> An independent existent has no external ground of existence.</p>
+    <p><span class="premise">P11.</span> Every actual existent is either contingent or necessary.</p>
+    <p><span class="premise">P12.</span> An independent existent <a href={url('objections/independent-but-contingent')}>cannot be contingent</a>, since C2 would give it an external ground.</p>
+    <p><ConclusionMark n={4} /> At least one independent ground of dependent reality has <a href={url('terms/necessary-existence')}>necessary existence</a>.</p>
   </section>
-  <section id="mind"><h2><a href={url('argument/mind')} aria-label="Part III: A mental foundation">III</a></h2>
-    <p>The actual order could have been different. If a necessary ground determined this exact order by necessity, the order itself would be necessary.</p>
-    <p>An impersonal process could assign chances to several outcomes. The argument holds that those chances <a href={url('objections/impersonal-chance')}>leave open why this outcome occurred</a>. <ConclusionMark n={5} /> A complete ground must supply that <a href={url('terms/contrastive-explanation')}>contrastive explanation</a>.</p>
-    <p>If <a href={url('terms/intentional-selection')}>intentional selection</a> alone can settle which possibility becomes actual <a href={url('objections/selection-and-reasons')}>without making it necessary</a>, <ConclusionMark n={6} /> then the ultimate ground must be capable of representing and selecting among alternatives.</p>
+  <section id="mind"><h2><a href={url('argument/mind')}>III</a></h2>
+    <p><span class="premise">P13.</span> The actual concrete order is contingent.</p>
+    <p><span class="premise">P14.</span> If a necessary foundation necessitates the actual order, then that order is necessary.</p>
+    <p><span class="premise">P15.</span> An exclusively impersonal ultimate ground either necessitates its outcome or produces it through impersonal indeterminism.</p>
+    <p><span class="premise">P16.</span> No necessary foundation necessitates the actual order, given P13 and P14.</p>
+    <p><span class="premise">P17.</span> A complete ground of the actual order supplies a <a href={url('terms/contrastive-explanation')}>contrastive explanation</a> of its actuality.</p>
+    <p><span class="premise">P18.</span> An impersonal distribution can assign positive chances to distinct outcomes.</p>
+    <p><span class="premise">P19.</span> An impersonal distribution of chances <a href={url('objections/impersonal-chance')}>does not explain why this outcome occurred rather than another</a>.</p>
+    <p><ConclusionMark n={5} /> An exclusively impersonal ground cannot completely explain why the actual order obtains.</p>
+    <p><span class="premise">P20.</span> Only <a href={url('terms/intentional-selection')}>intentional selection</a> can settle which order obtains while <a href={url('objections/selection-and-reasons')}>preserving the possibility of a different order</a>.</p>
+    <p><span class="premise">P21.</span> Intentional selection requires the capacity to represent alternatives.</p>
+    <p><ConclusionMark n={6} /> The ultimate ground that settles which order obtains has mental capacity.</p>
   </section>
-  <section id="conclusion"><h2><a href={url('argument/conclusion')} aria-label="Part IV: Conclusion">IV</a></h2>
-    <p><ConclusionMark n={7} /> If the independent ground is what ultimately settles the contingent order, then contingent reality has a necessary mental foundation.</p>
+  <section id="conclusion"><h2><a href={url('argument/conclusion')}>IV</a></h2>
+    <p><span class="premise">P22.</span> At least one independent ground of dependent reality is itself the ultimate ground that settles which order obtains.</p>
+    <p><ConclusionMark n={7} /> Contingent reality has a necessary mental foundation.</p>
     <a class="proof" href={url('examination/proof')}>Formal logical proof</a>
   </section>
 </main></body></html>
@@ -47,7 +69,8 @@ const url = (path: string) => base + '/' + path + '/';
   main{margin:auto;max-width:46rem;padding:clamp(3rem,8vw,7rem) 1.45rem 5rem}
   h1,h2,p{margin:0}h1{font-size:clamp(2.5rem,6.5vw,4.7rem);font-weight:400;line-height:1.03;letter-spacing:-.05em;text-wrap:balance;margin-bottom:2.4rem}
   h1,p{-webkit-text-stroke:.012em currentColor}
-  section{border-top:1px solid #454548;padding:1.5rem 0 2rem}
+  section+section{margin-top:2.75rem}
+  h2 a,h2 a:hover,h2 a:focus-visible{text-decoration:none}
   h2{font:600 .92rem/1.5 system-ui,sans-serif;margin-bottom:1rem}
   p+p{margin-top:.8rem}a{color:inherit;text-decoration-color:#78787d;text-underline-offset:.19em;text-decoration-thickness:1px}
   a:hover,a:focus-visible{text-decoration-color:white;color:white}

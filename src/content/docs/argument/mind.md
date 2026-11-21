@@ -2,18 +2,46 @@
 title: A mental foundation
 ---
 
-Suppose a necessary foundation exists and the concrete order it grounds is contingent. The foundation would still exist if a different order obtained. What accounts for the difference?
+**P13.** The actual concrete order is contingent.
 
-## P19 · The impersonal alternative
+A different concrete order is metaphysically possible.
 
-If the foundation's [intrinsic nature](../../terms/intrinsic-nature/) necessarily determines this exact order, the order could never have been different. That conflicts with the starting contingency. An impersonal probabilistic process offers a stronger alternative. The same basis could allow several outcomes and assign each a chance.
+**P14.** If a necessary foundation necessitates the actual order, then that order is necessary.
 
-The argument now needs a contrastive standard of sufficiency. A probability distribution explains why an outcome was eligible and how likely it was. Does it explain why this eligible outcome actually occurred? P19 treats an answer to that further question as necessary for a complete [ground](../../terms/ground/).
+A necessary sufficient condition that necessitates its effect leaves no possible circumstance in which the effect is absent.
 
-## P20–P21 · Intentional selection
+**P15.** An exclusively impersonal ultimate ground either necessitates its outcome or produces it through impersonal indeterminism.
 
-Consider someone choosing between two routes home. Both remain open. The person takes the longer route to return a borrowed book. The end makes this particular choice intelligible even if the person could have gone straight home. Intentional explanation purports to preserve both intelligibility and alternatives.
+P15 states the alternatives the argument must exclude to reject an exclusively impersonal explanation.
 
-Extending that model to a foundation requires two claims. Reasons can sufficiently explain a selection without necessitating it, and only a ground capable of representing possibilities can settle the contrast in that way. An example of successful human agency supports the coherence of the proposal. Its exclusivity requires a further defense.
+**P16.** No necessary foundation necessitates the actual order, given P13 and P14.
 
-[Compare chance and agency under the same explanatory standard](../../objections/selection-and-reasons/).
+From P13 and P14 by modus tollens.
+
+**P17.** A complete ground of the actual order supplies a [contrastive explanation](../../terms/contrastive-explanation/) of its actuality.
+
+The explanatory question concerns the actuality of this particular order.
+
+**P18.** An impersonal distribution can assign positive chances to distinct outcomes.
+
+A single distribution admits different realizations.
+
+**P19.** An impersonal distribution of chances [does not explain why this outcome occurred rather than another](../../objections/impersonal-chance/).
+
+Repeating the distribution leaves the difference between two eligible outcomes unexplained.
+
+**C5.** An exclusively impersonal ground cannot completely explain why the actual order obtains.
+
+P16 excludes necessitation. P17–P19 exclude impersonal chance as a complete contrastive account.
+
+**P20.** Only [intentional selection](../../terms/intentional-selection/) can settle which order obtains while [preserving the possibility of a different order](../../objections/selection-and-reasons/).
+
+P20 posits the exclusivity of intentional selection. The insufficiency of impersonal chance alone does not establish this premise.
+
+**P21.** Intentional selection requires the capacity to represent alternatives.
+
+An agent selects one alternative for a reason by representing that alternative as an end or as a means.
+
+**C6.** The ultimate ground that settles which order obtains has mental capacity.
+
+P20 and P21 attribute mental capacity to whatever ultimately settles the contrast.

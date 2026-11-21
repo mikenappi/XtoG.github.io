@@ -2,18 +2,30 @@
 title: Contingency and dependence
 ---
 
-A particular tree exists. It could have failed to exist had the seed never germinated. That judgment concerns what was possible. Saying that the tree depends on something concerns what explains its actual existence. The transition between those claims needs an argument.
+**P1.** Something [exists contingently](../../terms/contingent-existence/).
 
-## P2 · From possibility to dependence
+A particular tree exists. Had its seed failed to germinate, that tree would never have existed.
 
-> If a thing's existence is entirely grounded in its own [intrinsic nature](../../terms/intrinsic-nature/), then it exists necessarily.
+**P2.** If a thing’s [intrinsic nature](../../terms/intrinsic-nature/) fully grounds its existence, then it exists necessarily.
 
-Suppose the nature fully accounts for the thing's existence. What could vary so that this very thing failed to exist? If some further condition had to obtain before there was such a thing, that condition would share the explanatory work. On the proposed principle, possible absence therefore rules out a wholly intrinsic sufficient [ground](../../terms/ground/).
+A wholly intrinsic ground would suffice in every possible circumstance. If a further condition must obtain, the ground involves that condition.
 
-This treats “exists” as a claim about whether there is an instance. No step adds existence to a list of descriptive properties. The disputed issue is whether an intrinsic explanation of *actual existence* would suffice across possible circumstances.
+**P3.** Whatever exists contingently could have failed to exist.
 
-## P5 · Why appeal to sufficient reason?
+Contingency concerns a metaphysical possibility of absence.
 
-There is still a third possibility to address. Something whose existence lacks an intrinsic explanation might simply exist as a [brute fact](../../terms/brute-fact/). The restricted PSR rules this out for [contingent existence](../../terms/contingent-existence/). Together, P2 and P5 yield the first result: whatever exists contingently requires a ground beyond itself.
+**C1.** A contingent existent lacks a wholly intrinsic sufficient ground of existence.
 
-[Examine the brute-fact objection](../../objections/brute-existence/).
+P2 and P3 exclude a wholly intrinsic ground by modus tollens.
+
+**P4.** A sufficient ground of existence is either wholly intrinsic or at least partly external.
+
+These alternatives distinguish grounds by whether anything external contributes to the explanation.
+
+**P5.** The [restricted Principle of Sufficient Reason](../../terms/restricted-principle-of-sufficient-reason/) states that every contingent existent has a sufficient explanation of its existence.
+
+P5 excludes brute contingent existence. SC2 establishes only that proposing a brute fact does not refute P5.
+
+**C2.** Every contingent existent has an external [ground](../../terms/ground/) of existence.
+
+P4 and P5 require a sufficient ground. C1 excludes the wholly intrinsic alternative.

@@ -1,6 +1,5 @@
 ---
-title: Contingent existence
+title: "Something exists contingently."
 ---
 
-Something actually exists and could have failed to exist. The alternative must be metaphysically possible. Our uncertainty about its existence would establish a weaker claim.
-
+**Contingent existence.** Something actually exists and could have failed to exist. The alternative must be metaphysically possible. Our uncertainty about its existence would establish a weaker claim.

@@ -27,11 +27,11 @@ def check(browser, origin, width, height):
     assert labels == ["SC1.", "SC2."] + [f"C{n}." for n in range(1, 8)]
     browser.save_screenshot(f"screenshots/argument-{width}.png")
     for label, route, title in [
-        ("brute fact", "terms/brute-fact/", "Brute fact"),
-        ("Presupposing inexplicability", "terms/presupposing-inexplicability/", "Presupposing inexplicability"),
+        ("brute fact", "terms/brute-fact/", "A brute fact is a fact whose obtaining lacks a sufficient explanation."),
+        ("Presupposing inexplicability", "terms/presupposing-inexplicability/", "Presupposing inexplicability assumes the claim that requires justification."),
         ("Formal logical proof", "examination/proof/", "Formal logical proof"),
-        ("exist contingently", "terms/contingent-existence/", "Contingent existence"),
-        ("cannot be brute", "objections/brute-existence/", "Brute existence"),
+        ("exists contingently", "terms/contingent-existence/", "Something exists contingently."),
+        ("includes an independent existent", "objections/the-dependent-totality/", "The complete ground of dependent reality includes an independent existent."),
         ("II", "argument/necessity/", "A necessary foundation"),
     ]:
         browser.find_element(By.LINK_TEXT, label).click()

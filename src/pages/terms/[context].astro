@@ -1,0 +1,14 @@
+---
+import { getEntry, render } from 'astro:content';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import contexts from '../../data/definition-contexts.json';
+
+export function getStaticPaths() {
+  return contexts.map(({ id, entry, title }) => ({ params: { context: id }, props: { entry, title } }));
+}
+const { entry, title } = Astro.props;
+const definition = await getEntry('docs', entry);
+if (!definition) throw new Error('Missing definition: ' + entry);
+const { Content } = await render(definition);
+---
+<StarlightPage frontmatter={{ title }}><Content /></StarlightPage>

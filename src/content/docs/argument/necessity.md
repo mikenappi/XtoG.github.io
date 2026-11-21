@@ -2,16 +2,38 @@
 title: A necessary foundation
 ---
 
-Suppose every dependent thing has a [ground](../../terms/ground/) in another dependent thing. Following the links might take us arbitrarily far. At each step we learn what an individual depends on. Have we thereby explained why there are any dependent things at all?
+**P6.** At least one existent depends on a ground beyond itself.
 
-## P8–P10 · The dependent totality
+A tree depends on conditions outside itself for its existence.
 
-The argument takes the existence of dependent reality collectively as its explanandum. If each proposed ground already presupposes some dependent reality, each answer takes for granted part of what was to be explained. A circle returns this explanatory debt to its starting point. An infinite series need never return to its start, yet each of its members still receives its existence from elsewhere.
+**P7.** The [dependent totality](../../terms/dependent-totality/) has a complete ground.
 
-The controversial premise is that a complete ground of the collective fact must avoid presupposing that fact. Merely counting the members, or observing that each has a ground, does not establish this premise. If it holds, at least one independent ground must figure in the explanation.
+P7 applies the demand for explanation to dependent existence considered collectively.
 
-## P12 · Why must an independent ground be necessary?
+**P8.** Each explanation that appeals to another dependent existent presupposes that dependent reality exists.
 
-Assume an independent ground could have failed to exist. By the result of [Part I](../contingency/), it would require a ground beyond itself. That contradicts its independence. Given the distinction between contingent and [necessary existence](../../terms/necessary-existence/), an actual independent ground therefore exists necessarily.
+A further dependent member can explain a given member only if that further member exists.
 
-Independence alone supplies no modal conclusion. The inference depends on the earlier bridge and restricted PSR. [Examine the totality objection](../../objections/the-dependent-totality/) or [the independent-but-contingent objection](../../objections/independent-but-contingent/).
+**P9.** A complete explanation of why dependent reality exists cannot presuppose that dependent reality exists.
+
+A ground that assumes the fact to be explained leaves the collective question unanswered.
+
+**C3.** The complete ground of dependent reality [includes an independent existent](../../objections/the-dependent-totality/).
+
+By P7–P9, at least one contributor to the complete ground is independent.
+
+**P10.** An independent existent has no external ground of existence.
+
+Independence here concerns the ground of existence.
+
+**P11.** Every actual existent is either contingent or necessary.
+
+Actuality together with possible absence is contingency. Actuality together with impossible absence is necessity.
+
+**P12.** An independent existent [cannot be contingent](../../objections/independent-but-contingent/), since C2 would give it an external ground.
+
+From C2, contingency would entail an external ground. P10 excludes that ground.
+
+**C4.** At least one independent ground of dependent reality has [necessary existence](../../terms/necessary-existence/).
+
+C3 supplies the independent existent. P11 and P12 establish its necessity.

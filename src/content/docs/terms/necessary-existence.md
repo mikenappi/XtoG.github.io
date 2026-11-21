@@ -1,6 +1,5 @@
 ---
-title: Necessary existence
+title: "At least one independent ground of dependent reality has necessary existence."
 ---
 
-Something exists in every metaphysically possible circumstance.
-
+**Necessary existence.** Something exists in every metaphysically possible circumstance.
