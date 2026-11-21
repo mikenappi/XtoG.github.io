@@ -1,5 +1,5 @@
 ---
-title: "The complete ground of dependent reality includes an independent existent."
+title: "C3. The complete ground of dependent reality includes an independent existent."
 ---
 
 **Challenge to P8–P10.** Explaining every member may exhaust what needs explanation. Asking for another [ground](../../terms/ground--objections-the-dependent-totality-1/) can sound like counting the collection twice.

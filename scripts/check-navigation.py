@@ -36,14 +36,16 @@ def check(browser, origin, width, height):
     ]:
         browser.find_element(By.LINK_TEXT, label).click()
         WebDriverWait(browser, 5).until(lambda b: b.current_url == origin + route)
-        assert browser.find_element(By.TAG_NAME, "h1").text == title
+        heading = browser.find_element(By.TAG_NAME, "h1")
+        assert heading.get_attribute("textContent").strip().endswith(title)
         assert browser.execute_script("return document.documentElement.scrollWidth <= innerWidth")
         assert not browser.find_elements(By.CSS_SELECTOR, 'nav.sidebar, starlight-menu-button, .right-sidebar')
         if route == "examination/proof/":
-            steps = browser.find_elements(By.CSS_SELECTOR, "main .line details")
+            steps = browser.find_elements(By.CSS_SELECTOR, "main details.line")
             assert len(steps) == 20 and all(step.get_attribute("open") is None for step in steps)
             toggle = steps[-1].find_element(By.TAG_NAME, "summary")
-            toggle.click()
+            assert "∃x" in toggle.text and "reason" not in toggle.text.lower()
+            toggle.send_keys("\ue007")
             assert "same witness" in steps[-1].text
             toggle.click()
             assert steps[-1].get_attribute("open") is None

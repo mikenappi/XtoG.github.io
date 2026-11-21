@@ -1,5 +1,5 @@
 ---
-title: "Only intentional selection can settle which order obtains while preserving the possibility of a different order."
+title: "P20. Only intentional selection can settle which order obtains while preserving the possibility of a different order."
 ---
 
 **Challenge to P20–P21.** If an agent's reasons necessitate a choice, contingency disappears. If those reasons leave the choice open, why is the remaining difference any more intelligible than chance?

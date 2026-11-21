@@ -14,6 +14,7 @@ export default defineConfig({
     description: 'A philosophical argument from contingency to a necessary mental foundation.',
     head: [{ tag: 'script', attrs: { src: `${base.replace(/\/$/, '')}/reading-transition.js` } }],
     components: {
+      PageTitle: './src/components/ReadingTitle.astro',
       PageFrame: './src/components/ExpansionFrame.astro',
       TwoColumnContent: './src/components/ReadingColumn.astro',
     },

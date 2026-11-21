@@ -34,6 +34,6 @@ Actuality together with possible absence is contingency. Actuality together with
 
 From C2, contingency would entail an external ground. P10 excludes that ground.
 
-**C4.** At least one independent ground of dependent reality has [necessary existence](../../terms/necessary-existence/).
+**C4.** At least one [independent ground](../../terms/independent-ground/) of dependent reality has [necessary existence](../../terms/necessary-existence/).
 
 C3 supplies the independent existent. P11 and P12 establish its necessity.

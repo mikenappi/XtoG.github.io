@@ -34,3 +34,17 @@
 .expansion .content-panel + .content-panel { border-top: 0; }
 .expansion :is(h1,h2,h3) a { text-decoration:none; }
 .expansion h1 { font-size:clamp(1.65rem,4vw,2.75rem); line-height:1.18; }
+
+.expansion h1.statement-title {
+  font:500 1.125rem/1.7 Georgia,'Times New Roman',serif;
+  letter-spacing:normal;
+  color:#e6e6e8;
+}
+.statement-title .premise, .statement-title sup {
+  font:600 .75em/1 system-ui,sans-serif;
+  color:#bebec4;
+  -webkit-text-stroke:0;
+}
+.statement-title sup { font-size:.65em; line-height:0; }
+.proof-title { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+.expansion .content-panel:has(.proof-title) { padding:0; }

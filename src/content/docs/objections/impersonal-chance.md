@@ -1,5 +1,5 @@
 ---
-title: "An impersonal distribution of chances does not explain why this outcome occurred rather than another."
+title: "P19. An impersonal distribution of chances does not explain why this outcome occurred rather than another."
 ---
 
 **Challenge to P19.** A process can fully account for an event by giving its conditions and objective chances. Why demand that an explanation also distinguish the actual outcome?

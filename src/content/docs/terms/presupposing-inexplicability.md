@@ -1,5 +1,5 @@
 ---
-title: "Presupposing inexplicability assumes the claim that requires justification."
+title: "S3. Presupposing inexplicability assumes the claim that requires justification."
 ---
 
 **Presupposing inexplicability.** To presuppose inexplicability here is to assume the very absence of explanation that the claim of bruteness requires you to establish.

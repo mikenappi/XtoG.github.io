@@ -1,5 +1,5 @@
 ---
-title: "An independent existent cannot be contingent, since C2 would give it an external ground."
+title: "P12. An independent existent cannot be contingent, since C2 would give it an external ground."
 ---
 
 **Challenge to P12.** “Nothing else grounds it” and “it could not have failed to exist” express different claims. Why could the independent [ground](../../terms/ground--objections-independent-but-contingent-1/) not be a brute contingent existent?

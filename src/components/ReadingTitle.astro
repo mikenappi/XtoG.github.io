@@ -1,0 +1,9 @@
+---
+const { title } = Astro.locals.starlightRoute.entry.data;
+const label = title.match(/^((?:SC|S|P|C)\d+)\. (.+)$/u);
+const isProof = /\/examination\/proof\/?$/.test(Astro.url.pathname);
+const isStatement = /\/(terms|objections)\//.test(Astro.url.pathname);
+---
+<h1 id="_top" class:list={[{ 'statement-title': isStatement, 'proof-title': isProof }]}>
+  {label ? <>{label[1].includes('C') ? <sup>{label[1]}.</sup> : <span class="premise">{label[1]}.</span>}{' '}<span class="wording">{label[2]}</span></> : title}
+</h1>

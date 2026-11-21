@@ -33,5 +33,45 @@
     "id": "contingent-existence--terms-restricted-principle-of-sufficient-reason-1",
     "entry": "terms/contingent-existence",
     "title": "Every instance of contingent existence has a sufficient explanation for its actuality."
+  },
+  {
+    "id": "necessitation--p15",
+    "entry": "terms/necessitation",
+    "title": "P15. An exclusively impersonal ultimate ground either necessitates its outcome or produces it through impersonal indeterminism."
+  },
+  {
+    "id": "necessitation--p16",
+    "entry": "terms/necessitation",
+    "title": "P16. No necessary foundation necessitates the actual order, given P13 and P14."
+  },
+  {
+    "id": "impersonal--p18",
+    "entry": "terms/impersonal",
+    "title": "P18. An impersonal distribution can assign positive chances to distinct outcomes."
+  },
+  {
+    "id": "impersonal--p19",
+    "entry": "terms/impersonal",
+    "title": "P19. An impersonal distribution of chances does not explain why this outcome occurred rather than another."
+  },
+  {
+    "id": "impersonal--c5",
+    "entry": "terms/impersonal",
+    "title": "C5. An exclusively impersonal ground cannot completely explain why the actual order obtains."
+  },
+  {
+    "id": "ultimate-ground--c6",
+    "entry": "terms/ultimate-ground",
+    "title": "C6. The ultimate ground that settles which order obtains has mental capacity."
+  },
+  {
+    "id": "independent-ground--p22",
+    "entry": "terms/independent-ground",
+    "title": "P22. At least one independent ground of dependent reality is itself the ultimate ground that settles which order obtains."
+  },
+  {
+    "id": "ultimate-ground--p22",
+    "entry": "terms/ultimate-ground",
+    "title": "P22. At least one independent ground of dependent reality is itself the ultimate ground that settles which order obtains."
   }
 ]

@@ -2,16 +2,17 @@
 interface Props { n: number; formula: string }
 const { n, formula } = Astro.props;
 ---
-<div class="line" id={'step-' + n}>
-  <span class="number">{n}.</span><div class="statement"><span class="formula">{formula}</span>
-    <details><summary aria-label={'Reason for step ' + n}>reason</summary><div class="reason"><slot /></div></details>
-  </div>
-</div>
+<details class="line" id={'step-' + n}>
+  <summary><span class="number">{n}.</span><span class="formula">{formula}</span></summary>
+  <div class="reason"><slot /></div>
+</details>
 <style>
-  .line{display:grid;grid-template-columns:2.4ch minmax(0,1fr);gap:.8rem;padding:.6rem 0;align-items:baseline}
+  .line{margin:0}
+  summary{display:grid;grid-template-columns:2.4ch minmax(0,1fr);gap:.8rem;align-items:baseline;padding:.65rem 0;cursor:pointer;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary:focus-visible{outline:2px solid white;outline-offset:3px}
+  summary:hover .formula,details[open] .formula{color:white}
   .number{font:500 .8rem system-ui;color:#c2c2c8;text-align:right}
   .formula{font:1.1rem/1.6 'Cambria Math',Georgia,serif;overflow-wrap:anywhere}
-  details{margin:0}summary{display:inline-block;cursor:pointer;text-decoration:underline;text-underline-offset:.2em;color:#c2c2c8;font:500 .8rem/1.6 system-ui}
-  summary::-webkit-details-marker{display:none}summary:focus-visible{outline:2px solid white;outline-offset:3px}
-  .reason{margin:.35rem 0;max-width:36rem;padding:.55rem .8rem;background:#1d1d20;border:1px solid #505056;border-radius:.3rem;font:1rem/1.55 system-ui}
+  .reason{margin:0 0 .6rem 2.5rem;max-width:36rem;padding:.55rem .8rem;background:#1d1d20;border:1px solid #505056;border-radius:.3rem;font:1rem/1.55 system-ui}
 </style>
