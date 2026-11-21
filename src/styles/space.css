@@ -1,16 +1,9 @@
-/* A stationary field keeps the page quiet while reading. */
 :root {
   color-scheme: dark;
   background-color: #0c0c0e;
-  --star-field: radial-gradient(1px 1px at 17px 41px,#777 80%,transparent),
-    radial-gradient(.8px .8px at 67px 117px,#57575c 80%,transparent),
-    radial-gradient(1px 1px at 152px 83px,#414146 80%,transparent);
 }
-.argument-page, body:has(.expansion) {
-  background-color: #0c0c0e;
-  background-image: var(--star-field);
-  background-size: 293px 347px, 269px 213px, 411px 311px;
-}
+.argument-page, body:has(.expansion) { background-color: #0c0c0e; }
+.argument-page > main, .expansion { position: relative; z-index: 1; }
 @media (prefers-reduced-motion: no-preference) {
   @view-transition { navigation: auto; }
   ::view-transition-group(reading-selection) {

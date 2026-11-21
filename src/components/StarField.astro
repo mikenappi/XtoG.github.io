@@ -1,0 +1,86 @@
+<div class="star-field" aria-hidden="true">
+  <div class="layer far"></div>
+  <div class="layer near"></div>
+</div>
+
+<style>
+  .star-field {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    contain: strict;
+  }
+  .layer {
+    position: absolute;
+    inset: 0;
+    --period: 281px;
+    --depth: .12;
+    transform: translate3d(0, var(--offset, 0px), 0);
+  }
+  .layer::before {
+    content: '';
+    position: absolute;
+    inset: calc(-2 * var(--period)) calc(-1 * var(--period));
+    background-image: var(--stars);
+    background-size: var(--period) var(--period);
+  }
+  .far {
+    --stars: radial-gradient(.9px at 8% 13%, #777780 50%, transparent),
+             radial-gradient(.85px at 62% 74%, #66666e 55%, transparent),
+             radial-gradient(1px at 87% 37%, #515158 55%, transparent),
+             radial-gradient(.8px at 33% 53%, #55555d 55%, transparent);
+    --travel-x: var(--period);
+    --travel-y: calc(-1 * var(--period));
+    --duration: 185s;
+  }
+  .near {
+    --period: 317px;
+    --depth: .28;
+    --stars: radial-gradient(1.25px at 31% 17%, #95959c 45%, transparent),
+             radial-gradient(1px at 72% 46%, #797981 55%, transparent),
+             radial-gradient(1.1px at 19% 82%, #65656c 50%, transparent);
+    --travel-x: calc(-1 * var(--period));
+    --travel-y: var(--period);
+    --duration: 123s;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .layer::before { animation: drift var(--duration) linear infinite; }
+    @keyframes drift { to { transform: translate3d(var(--travel-x), var(--travel-y), 0); } }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .layer { transform: none; }
+  }
+</style>
+
+<script>
+  const layers = [...document.querySelectorAll<HTMLElement>('.star-field .layer')].map(element => {
+    const style = getComputedStyle(element);
+    return { element, period: parseFloat(style.getPropertyValue('--period')), depth: Number(style.getPropertyValue('--depth')) };
+  });
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  let frame = 0;
+  function update() {
+    frame = 0;
+    for (const { element, period, depth } of layers) {
+      // Repeat by exactly one tile so long documents never expose an empty edge.
+      element.style.setProperty('--offset', -(scrollY * depth % period) + 'px');
+    }
+  }
+  function schedule() {
+    if (!frame) frame = requestAnimationFrame(update);
+  }
+  function syncMotion() {
+    window.removeEventListener('scroll', schedule);
+    cancelAnimationFrame(frame);
+    frame = 0;
+    if (!reduced.matches) {
+      update();
+      window.addEventListener('scroll', schedule, { passive: true });
+    }
+  }
+  reduced.addEventListener('change', syncMotion);
+  window.addEventListener('pageshow', syncMotion);
+  syncMotion();
+</script>
